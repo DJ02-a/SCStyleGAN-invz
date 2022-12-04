@@ -1,3 +1,10 @@
+assets/
+packages/
+train_result/
+pretrained_models/
+result/
+*.png
+*.pt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -14,8 +21,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -127,3 +132,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+wandb/
+*.lmdb/
+*.pkl
+*.pt
+.idea
+cache
+pretrained_models/seg.pth

@@ -1,0 +1,56 @@
+# warning: do not use *tuple* in yaml file
+style_ckpt: './packages/stylegan2/ckpt/stylegan2-ffhq-config-f.pt'
+# style_ckpt: './packages/stylegan2/ckpt/ffhq.pt'
+img_size: 1024
+
+# model
+model_id: SC-StyleGAN
+
+# multi-GPUs
+use_mGPU: True
+
+# validation
+use_validation: False
+valid_dataset_root: ./assets/k-celeb
+
+# wandb
+use_wandb: False
+wandb_alert_thres: 1000
+
+# root
+train_dataset_root_list: "/home/jjy/dataset/k_face/train"
+label_dataset_root_list: "/home/jjy/dataset/k_face/test"
+save_root: train_result
+
+# learning rate
+lr_E: 0.00001
+
+# optimizer
+optimizer: Adam # [Ranger, Adam]
+betas: [0.0, 0.999] # default: Adam (0.9, 0.999) / Ranger (0.95, 0.999)
+
+# weight of loss
+W_l1: 1
+W_feat: 10
+W_global_lpips: 10
+W_local_lpips: 10
+
+# hyperparameters
+same_prob: 0.2
+batch_per_gpu: 8
+max_step: 400000
+
+# log cycle
+loss_cycle: 10
+test_cycle: 500
+ckpt_cycle: 5000
+
+# ckpt path
+# load checkpoints from ./train_result/{ckpt_id}/ckpt/G_{ckpt_step}.pt
+# if ckpt_id is empty, load G_latest.pt and D_latest.pt
+# Note that an empty space is None, but None is "None"
+load_ckpt: False
+ckpt_id:
+ckpt_step: 
+global_step: 
+
